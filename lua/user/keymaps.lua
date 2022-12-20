@@ -19,13 +19,13 @@ lvim.keys.normal_mode["<C-z>"] = ":wq <cr>"
 lvim.keys.insert_mode["<A-BS>"] = "<c-w>"
 
 function _G.set_terminal_keymaps()
-  vim.api.nvim_buf_set_keymap(0, "t", "<A-h>", [[<C-\><C-n><C-W>h]])
-  vim.api.nvim_buf_set_keymap(0, "t", "<A-j>", [[<C-\><C-n><C-W>j]])
-  vim.api.nvim_buf_set_keymap(0, "t", "<A-k>", [[<C-\><C-n><C-W>k]])
-  vim.api.nvim_buf_set_keymap(0, "t", "<A-l>", [[<C-\><C-n><C-W>l]])
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]])
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>j]])
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>k]])
+	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]])
 end
 
-vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
+-- vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 
 -- Resize with arrows
 lvim.keys.normal_mode["<C-Up>"] = ":resize -2<cr>"
@@ -85,7 +85,7 @@ lvim.keys.normal_mode["-"] = ":lua require'lir.float'.toggle()<cr>"
 --   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>"
 -- )
 
-vim.cmd [[
+vim.cmd([[
   function! QuickFixToggle()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
       copen
@@ -93,9 +93,8 @@ vim.cmd [[
       cclose
     endif
   endfunction
-]]
+]])
 
 lvim.keys.normal_mode["<m-q>"] = ":call QuickFixToggle()<cr>"
 
 -- vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>")
-

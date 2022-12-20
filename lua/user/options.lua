@@ -1,5 +1,5 @@
-lvim.colorscheme = "rose-pine"
-lvim.transparent_window = true
+lvim.colorscheme = "duskfox"
+lvim.transparent_window = false
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.builtin.illuminate.active = true
