@@ -31,7 +31,6 @@ lvim.plugins = {
 	-- Syntax/Treesitter
 	"nvim-treesitter/playground",
 	"nvim-treesitter/nvim-treesitter-textobjects",
-	"folke/todo-comments.nvim",
 	"windwp/nvim-ts-autotag",
 	"kylechui/nvim-surround",
 	"p00f/nvim-ts-rainbow",
@@ -50,6 +49,28 @@ lvim.plugins = {
 	"is0n/jaq-nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	"phaazon/hop.nvim",
+	{
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	},
+	{
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	},
 	-- "b0o/incline.nvim",
 
 	-- Debugging
